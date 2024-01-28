@@ -1,0 +1,11 @@
+{
+  "name": "database-timestamping-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/animalyoung/database-timestamping-bot.git",
+  "author": "Jonas Thierjung <Jonas.Thierjung@adesso.de>",
+  "license": "MIT",
+  "dependencies": {
+    "selenium-webdriver": "^4.17.0"
+  }
+}

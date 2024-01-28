@@ -1,12 +1,5 @@
 version: '3'
 services:
-  timestamp-bot-ubuntu:
-    image: selenium/standalone-chrome
-    ports:
-      - "4444:4444"
-    depends_on:
-      - mysql
-
   mysql:
     image: mysql:latest
     environment:
@@ -16,3 +9,13 @@ services:
       MYSQL_PASSWORD: password
     ports:
       - "3306:3306"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+  selenium-chrome:
+    image: selenium/standalone-firefox:latest
+    ports:
+      - "4444:4444"   # Maps port 4444 on the host to port 4444 in the container
+      - "7900:7900"   # Maps port 7900 on the host to port 7900 in the container
+    shm_size: 2g     # Sets shared memory size to 2g
+    depends_on:
+      - mysql
