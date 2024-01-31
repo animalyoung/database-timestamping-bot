@@ -1,6 +1,12 @@
 const { Builder, By, until } = require('selenium-webdriver');
 
 
+function pause(seconds) {
+    return new Promise(resolve => {
+        setTimeout(resolve, seconds * 1000);
+    });
+}
+
 
 async function runTest() {
 
@@ -29,8 +35,18 @@ async function runTest() {
         await usernameField.sendKeys('johann.tester@proton.me');
         await passwordField.sendKeys('Hallo999!');
 
+
+
         const submitButton = await driver.findElement(By.css('button[type="submit"], input[type="submit"]'));
+
+
+
+
         await submitButton.click();
+
+
+
+
     } finally {
         await driver.quit();
     }

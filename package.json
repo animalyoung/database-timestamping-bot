@@ -6,6 +6,8 @@
   "author": "Jonas Thierjung <Jonas.Thierjung@adesso.de>",
   "license": "MIT",
   "dependencies": {
+    "mysql": "github:mysqljs/mysql",
+    "mysql2": "^3.9.1",
     "selenium-webdriver": "^4.17.0"
   }
 }
